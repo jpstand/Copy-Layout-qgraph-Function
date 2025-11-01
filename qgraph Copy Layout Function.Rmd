@@ -1,0 +1,53 @@
+---
+title: "qgraph Copy Layout Function"
+author: "Philipp Standring"
+date: "2025-11-01"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r Code}
+library(qgraph)
+copy_layout <- function(qgraph_item, new_labels) {
+  layout_matrix <- qgraph_item$layout
+  original_labels <- qgraph_item$graphAttributes$Nodes$names
+  layout_df <- as.data.frame(layout_matrix)
+  rownames(layout_df) <- original_labels
+  if (!all(new_labels %in% original_labels)) {
+    stop("There is a difference in the labels")}
+  reordered_layout <- layout_df[new_labels, , drop = FALSE]
+  rownames(reordered_layout) <- NULL
+  return(as.matrix(reordered_layout))
+}
+
+temp_labels <- c("Depressed Mood","Anhedonia","Sleep Disturbance","Weight/Appetite Disturbance","Psychomotor Disturbance","Fatigue","Concentration Difficulties and Indecision","Anxious Mood","Worthlessness/Guilt","Thoughts of Death","Irritable Mood")
+
+cont_labels <- c("Depressed Mood","Anhedonia","Weight/Appetite Disturbance","Sleep Disturbance","Psychomotor Disturbance","Worthlessness/Guilt","Fatigue","Concentration Difficulties and Indecision","Thoughts of Death","Irritable Mood","Anxious Mood")
+
+#example below, make a qgraph item and then in layout for another qgraph plot call copy_layout(item, new node labels)
+t_net <- qgraph(temp_test,
+       layout = "circle",
+       nodeNames = temp_labels, legend.cex = 0.64,
+       posCol = "darkgreen", negCol = "red",
+       vsize = 7, esize = 11, asize = 8,
+       edge.width = 0.6,
+       color = "lightblue", vTrans = 175,
+       theme = "classic",
+       title = "Temporal Symptom Network",
+       title.cex = 1.45)
+
+qgraph(cont_test_sym,
+       layout = copy_layout(t_net, cont_labels), #use copy_layout function so that the node order matches t_net
+       nodeNames = cont_labels, 
+       legend.cex = 0.64,
+       posCol = "darkgreen", negCol = "red",
+       vsize = 7, esize = 11,
+       edge.width = 0.9,
+       color = "lightblue", vTrans = 175,
+       theme = "classic",
+       title = "Contemporaneous Symptom Network",
+       title.cex = 1.45)
+```
