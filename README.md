@@ -1,4 +1,7 @@
 # Copy-Layout-qgraph-Function
-This is a function to copy the node layout of a qgraph item so that other networks with the same nodes can be easily visual compared in circle layouts.
+This is a function to copy the node layout of a qgraph (Epskamp et al., 2012) item so that other networks with the same nodes can be easily visual compared in circle layouts.
 
 I originally wrote this function for a research paper examining temporal, contemporaneous, and between-subject networks of depressive symptoms. During preprocessing, our node order changed slightly, and when plotting with qgraph(layout = "circle"), it became difficult to visually compare networks because the node positions shifted around the circle. Manually reordering node labels didn’t work since reordering node labels changes the row/column order of the precision matrix meaning the plotted associations no longer represent the intended edges. This function solves that issue by allowing you to pass in a qgraph object and a set of node labels for the new network to reproduce the same layout. Feel free to suggest improvements for efficiency or edge cases. I wanted to share this in case anyone else ran into the same problem :)
+
+qgraph citation: 
+Epskamp, S., Cramer, A. O., Waldorp, L. J., Schmittmann, V. D., & Borsboom, D. (2012). qgraph: Network Visualizations of Relationships in Psychometric Data. Journal of Statistical Software, 48(4), 1–18. https://doi.org/10.18637/jss.v048.i04
