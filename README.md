@@ -5,3 +5,5 @@ I originally wrote this function for a research paper examining temporal, contem
 
 qgraph citation: 
 Epskamp, S., Cramer, A. O., Waldorp, L. J., Schmittmann, V. D., & Borsboom, D. (2012). qgraph: Network Visualizations of Relationships in Psychometric Data. Journal of Statistical Software, 48(4), 1–18. https://doi.org/10.18637/jss.v048.i04
+
+3.29.26 edit: Exciting news! The paper this function was made for has been accpeted for publication in British Journal of Psychology. I will add the doi link once available. Yay!
