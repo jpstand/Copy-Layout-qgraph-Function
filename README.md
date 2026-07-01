@@ -7,3 +7,5 @@ qgraph citation:
 Epskamp, S., Cramer, A. O., Waldorp, L. J., Schmittmann, V. D., & Borsboom, D. (2012). qgraph: Network Visualizations of Relationships in Psychometric Data. Journal of Statistical Software, 48(4), 1–18. https://doi.org/10.18637/jss.v048.i04
 
 3.29.26 edit: Exciting news! The paper this function was made for has been accpeted for publication in British Journal of Psychology. I will add the doi link once available. Yay!
+
+7.1.26 edit: Quinn, M. E., Kleinman, M. E., Standring, J. P., & Liu, Q. (2026). Relations among daily symptoms of depression. British Journal of Psychology, 00, 1–17. https://doi.org/10.1111/bjop.70072
